@@ -4,23 +4,6 @@ const jwt=require('jsonwebtoken')
 // SECRET_KEY="priya shukla";
 const login=async(req,res)=>{
     const{email,password}=req.body
-    if(!email || !password){
-        return res.status(400).json({'error':"email and password are required"})
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return res.status(400).json({ error: "Invalid email format" });
-  
-    }
-    const passwordRegex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*]).{8,}$/;
-    if (!passwordRegex.test(password)) {
-    return res.status(400).json({ error: "Invalid password format" });
-    }
-    const usernameRegex = /^[A-Za-z\s]+[0-9]*$/;
-  
-    if (!usernameRegex.test(username)){
-    return res.status(400).json({error: "Invalid username format"});
-  }
     try{
         const existingUser=await signupModel.findOne({email:email})
         console.log(existingUser)

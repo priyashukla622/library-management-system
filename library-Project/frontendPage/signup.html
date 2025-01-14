@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
-    <!-- <link rel="stylesheet" href="signup.css"> -->
 </head>
 <style>
     header h1{
@@ -116,12 +115,11 @@
     <!-- <script src="signup.js"></script> -->
      <script>
         
-document.getElementById("signupForm").addEventListener("submit", async function (e) {
+async function submitSignupForm(e) {
     e.preventDefault();
 
     const data = {
-        username: document.getElementById("signupUsername").value, // Add this line
-        // name: document.getElementById("signupName").value,
+        username: document.getElementById("signupUsername").value, 
         email: document.getElementById("signupEmail").value,
         password: document.getElementById("signupPassword").value,
         contact: document.getElementById("signupContact").value,
@@ -145,7 +143,7 @@ document.getElementById("signupForm").addEventListener("submit", async function 
         console.error("Error during signup:", error);
         document.getElementById("signupResponse").textContent = error.message || "Error during signup.";
     }
-});
+};
      </script>
 </body>
 </html>

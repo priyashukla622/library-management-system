@@ -4,17 +4,29 @@ const bcrypt = require("bcrypt");
 
 const Signup = async (req, res) => {
     const { username, email, password, contact,role } = req.body;
+//     if(!email || !password || !username || !contact || !role ){
+//         return res.status(400).json({'error':"email and password are required"})
+//     }
+//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     if (!emailRegex.test(email)) {
+//       return res.status(400).json({ error: "Invalid email format" });
+  
+//     }
+//     const passwordRegex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*]).{8,}$/;
+//     if (!passwordRegex.test(password)) {
+//     return res.status(400).json({ error: "Invalid password format" });
+//     }
+//     const usernameRegex = /^[A-Za-z\s]+[0-9]*$/;
+  
+//     if (!usernameRegex.test(username)){
+//     return res.status(400).json({error: "Invalid username format"});
+//   }
 
     try {
         const existingUser = await signupModel.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ message: "User already exists" });
         }
-        // const existingContact = await signupModel.findOne({ contact });
-        // if (existingContact) {
-        //     return res.status(400).json({ message: "Contact number already in use" });
-        // }
-
         const hashPassword = await bcrypt.hash(password, 10);
 
         const result = await signupModel.create({
