@@ -23,6 +23,5 @@ const userSignup = new mongoose.Schema({
         enum: ["admin", "member"], 
         required: true },
 });
-
 const signupModel = mongoose.model("Signup", userSignup);
 module.exports = signupModel;

@@ -15,12 +15,12 @@ const {deleteUser}=require("../controllers/deleteMember")
 
 
 // // ########### book data ###################
-// const {addBooks}=require("../controllers/addBook")
-// const {bookUpdated}=require("../controllers/updateBook")
-// const {viewBooks}=require("../controllers/viewBook")
-// const {deleteBooks}=require("../controllers/deleteBook")
-// const {issueBooks}=require("../controllers/issueBook")
-// const {returnBook}=require('../controllers/returnBook')
+const {addBooks}=require("../controllers/addBook")
+const {bookUpdated}=require("../controllers/updateBook")
+const {viewBooks}=require("../controllers/viewBook")
+const {deleteBooks}=require("../controllers/deleteBook")
+const {issueBooks}=require("../controllers/issueBook")
+const {returnBook}=require('../controllers/returnBook')
 
 
 
@@ -38,15 +38,15 @@ router.delete("/deleteUser",deleteUser)
 
 // // ###### Book data 
 // // router.post("/addBook",authToken,addBooks)
-// router.post("/addBook",addBooks)
-// router.put("/updateBook",bookUpdated)
-// router.get("/viewBook",viewBooks)
+router.post("/addBook",addBooks)
+router.put("/updateBook",bookUpdated)
+router.get("/viewBook",viewBooks)
 // // router.delete("/deleteBooks/:id",deleteBooks)
 // // router.delete("/deleteBooks/:id", deleteBooks);
-// router.delete("/deleteBook", deleteBooks);
-// router.post("/issueBooks",issueBooks)
-// router.post("/returnBook",returnBook)
+router.delete("/deleteBook", deleteBooks);
+router.post("/issueBooks",issueBooks)
+router.post("/returnBook",returnBook)
 
 
-// module.exports=router;
+
 module.exports = router;

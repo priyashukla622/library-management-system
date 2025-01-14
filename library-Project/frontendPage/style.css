@@ -8,6 +8,8 @@
 body, html {
     font-family: Arial, sans-serif;
     height: 100%; 
+    margin-left:3px;
+    margin-right:3px;
     /* overflow-x: hidden;  */
 }
 
@@ -34,6 +36,7 @@ nav a {
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    font-size: 20px;
 }
 
 nav a:hover {
@@ -70,78 +73,103 @@ nav a:hover {
     color: white;
 }
 
-/* #divs section for background image */
 #divs {
-    background-image: url("https://images.pexels.com/photos/2393789/pexels-photo-2393789.jpeg?auto=compress&cs=tinysrgb&w=600"); 
-    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRArxrL1DVH2z1i5QbZcgBX11nvtaUN_y7cFA&s");   */
-    background-size: cover;
-    background-position: center;
-    height: 60vh; 
+    background-image: url("https://images.pexels.com/photos/2393789/pexels-photo-2393789.jpeg?auto=compress&cs=tinysrgb&w=600");  
+    background-size: cover; 
+    object-fit: cover;
+    object-position: center;
+    height:85vh; 
     width: 100%;
     display: flex;
     justify-content: center; 
     align-items: center;
     position: relative; 
-    /* border: 2px solid #fff; */
 }
-/* #divs::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.3);
-    z-index: 1;
-} */
+
 
 #divs h1 {
     color: white;
     font-size: 50px;
     text-align: center;
 }
-/* Footer styles */
-footer {
+
+
+/* footer { 
     background-image: url("https://www.datocms-assets.com/29926/1602789304-footer-bg.png?h=472&w=1440");
-    padding: 10px 0;
-    color: #fff;
-    position: relative; 
+    color: white;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
 }
+
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+}
+
+.footer-info, .footer-links, .footer-social {
+    flex: 1; 
 }
 
 .footer-info {
-    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.footer-social a {
+color: white;
+text-decoration: none;
+margin: 5px 0;
 }
 
-.footerImg {
-    width: 50px; /* Adjust image size as needed */
-    height: 50px;
-    display: inline-block; /* Align the image and text in a line */
-    margin-right: 10px; /* Space between the image and text */
+.footer-links {
+    text-align: center;
 }
 
-.footer_img {
-    font-size: 24px; /* Adjust font size as needed */
-    margin: 0; 
-    vertical-align: middle; 
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-
-
-p {
-    margin: 5px 0; 
+.footer-links li {
+    margin: 5px 0;
 }
 
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.footer-social a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+} */
+
+
+/* @media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -151,4 +179,77 @@ p {
         flex-direction: column;
         align-items: center;
     }
+} */
+
+
+footer{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 50px;
+    color: #fff;
+    background-color: #011c39;
+}
+.footer> *{
+    flex:1 100%;
+}
+.footer-left{
+    margin-right: 1.25;
+}
+.footer-left img{
+    width: 50%;
+}
+h2{
+    font-weight: 600;
+    font-size: 17px;
+}
+.footer ul{
+    list-style: none;
+    padding-left:0 ;
+}
+.footer li{
+    line-height: 2em;
+}
+.footer a{
+    text-decoration: none;
+}
+.footer-right{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-flow: row wrap;
+
+}
+.footer-right > *{
+    flex:1 50%;
+    margin-right: 1.25em;
+}
+.box a{
+    color:#999;
+}
+.footer-bottom{
+    text-align: center;
+    color:#999;
+    padding-top: 50px;
+}
+.footer-left p{
+    padding-right: 20%;
+    color:#999;
+}
+.social a {
+    background-color: #364a62;
+    width:40px;
+    height:40px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.social a i{
+    color: #e7f2f4;
+    padding:10px 12px;
+    font-size: 20px;
 }
