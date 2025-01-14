@@ -1,0 +1,154 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    height: 100%; 
+    /* overflow-x: hidden;  */
+}
+
+.navbar {
+    background-color: #fff;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 10; 
+}
+
+img {
+    width: 100%;
+    max-width: 100px;
+    height: auto;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.header {
+    /* background-color: pink;  */
+    background-image: url("https://www.datocms-assets.com/29926/1602789304-footer-bg.png?h=472&w=1440");
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    width: 100%;
+    position: relative;
+    z-index: 5; 
+    border-bottom:2px solid #fff ;
+}
+
+/* Links in header */
+.header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.header a:hover {
+    /* background-color: #555; */
+    color: white;
+}
+
+/* #divs section for background image */
+#divs {
+    background-image: url("https://images.pexels.com/photos/2393789/pexels-photo-2393789.jpeg?auto=compress&cs=tinysrgb&w=600"); 
+    /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRArxrL1DVH2z1i5QbZcgBX11nvtaUN_y7cFA&s");   */
+    background-size: cover;
+    background-position: center;
+    height: 60vh; 
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative; 
+    /* border: 2px solid #fff; */
+}
+/* #divs::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 1;
+} */
+
+#divs h1 {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+/* Footer styles */
+footer {
+    background-image: url("https://www.datocms-assets.com/29926/1602789304-footer-bg.png?h=472&w=1440");
+    padding: 10px 0;
+    color: #fff;
+    position: relative; 
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-info {
+    text-align: left; /* Align text to the left */
+}
+
+.footerImg {
+    width: 50px; /* Adjust image size as needed */
+    height: 50px;
+    display: inline-block; /* Align the image and text in a line */
+    margin-right: 10px; /* Space between the image and text */
+}
+
+.footer_img {
+    font-size: 24px; /* Adjust font size as needed */
+    margin: 0; 
+    vertical-align: middle; 
+}
+
+
+
+p {
+    margin: 5px 0; 
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+}

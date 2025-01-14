@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <!-- <link rel="stylesheet" href="signup.css"> -->
+</head>
+<style>
+    header h1{
+        text-align: center;
+    }
+    #signup h2{
+        text-align: center;
+        text-decoration: underline;
+    }
+    section {
+        margin: 20px 0;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: white;
+    }
+    
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    form {
+        max-width: 500px;
+        margin: 10px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Form labels */
+    form label {
+        display: block;
+        margin: 10px 0 5px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    
+    /* Form input fields */
+    form input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+    
+    /* Form button styling */
+    form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+    }
+    
+    /* Button hover effect */
+    form button:hover {
+        background-color: #45a049;
+    }
+    #signupResponse{
+        margin-top: 10px;
+        font-size: 30px;
+        color: #d9534f;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    
+    }
+</style>
+<body>
+    <header>
+        <h1>Library Management System</h1>
+    </header>
+    <main>
+        <section id="signup">
+            <h2>Signup</h2>
+            <form id="signupForm">
+                <input type="text" id="signupUsername" name="username" placeholder="Enter Username" required />
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <input type="text" id="signupContact" placeholder="Contact Number" required>
+                <select id="signupRole" required>
+                   <option value="" disabled selected>Select Role</option>
+                   <option value="admin">Admin</option>
+                   <option value="member">Member</option>
+                </select>
+                <!-- <button type="submit">Signup</button> -->
+                <button type="submit" onclick="submitSignupForm(event)">Sign Up</button>
+            </form>
+            <p id="signupResponse"></p>
+        </section>
+    </main>
+    <!-- <script src="signup.js"></script> -->
+     <script>
+        
+document.getElementById("signupForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const data = {
+        username: document.getElementById("signupUsername").value, // Add this line
+        // name: document.getElementById("signupName").value,
+        email: document.getElementById("signupEmail").value,
+        password: document.getElementById("signupPassword").value,
+        contact: document.getElementById("signupContact").value,
+        role: document.getElementById("signupRole").value
+    };
+
+    try {
+        const response = await fetch("http://localhost:3000/users/signup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to sign up');
+        }
+
+        const result = await response.json();
+        document.getElementById("signupResponse").textContent = result.message;
+    } catch (error) {
+        console.error("Error during signup:", error);
+        document.getElementById("signupResponse").textContent = error.message || "Error during signup.";
+    }
+});
+     </script>
+</body>
+</html>
