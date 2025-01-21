@@ -20,6 +20,9 @@
         border: none;
         cursor: pointer;
     }
+    label{
+        font-weight: bold;
+    }
     button:hover{
         background-color:#4CAF50;
         color:white;
@@ -28,7 +31,7 @@
         max-width: 500px;
         border-radius: 8px;
         padding: 20px;
-        margin:50px auto;
+        margin:auto;
         background-color: #fff;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
@@ -47,6 +50,13 @@
         transition: background-color 0.3s ease;
         margin-top: 10px;
     }
+    section {
+        margin: 20px 0;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: white;
+    }
     #responseMessage {
         margin-top: 20px;
         font-size: 23px;
@@ -59,19 +69,21 @@
     <header>
         <h1>Library Management System Update Book In Library</h1>
     </header>
-    <main>
-        <h2>Update Book</h2>
         <section id="updateBook">
+            <h2>Update Book</h2>
             <form id="memberForm">
+                <label for="editTitle">Book Title</label>
                 <input type="text" id="editTitle" name="bookTitle" placeholder="Enter the book title" required />
+                <label for="editAuthor">Book Author</label>
                 <input type="text" id="editAuthor" name="bookAuthor" placeholder="Enter the book author" required />
+                <label for="editPublish">Book Publish</label>
                 <input type="text" id="editPublish" name="bookPublish" placeholder="Enter Publish Name" required />
+                <label for="editPrice">Book Price</label>
                 <input type="number" id="editPrice" name="bookPrice" placeholder="Enter Price" required />
                 <button type="submit" onclick="updateBookForm(event)">Update Book</button>
             </form>
             <p id="responseMessage"></p>
         </section>
-    </main>
     <script>
         const message = document.getElementById("responseMessage");
         async function updateBookForm(e) {

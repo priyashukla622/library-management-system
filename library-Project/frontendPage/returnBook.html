@@ -32,6 +32,13 @@
         background-color: #fff;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+    section {
+        margin: 20px 0;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: white;
+    }
     form input{
         width:100%;
         border:1px solid #ccc;
@@ -47,6 +54,10 @@
         transition: background-color 0.3s ease;
         margin-top: 10px;
     }
+    label {
+        font-weight: bold; 
+        text-decoration-color: black; 
+    }
     #responseMessage {
         margin-top: 20px;
         font-size: 23px;
@@ -58,14 +69,19 @@
 <body>
     <h1>Library Management System - Return Book</h1>
     <main>
-        <h2>Return Book</h2>
-        <form id="returnBookForm">
-            <input type="email" id="email" name="email" placeholder="Enter the Email" required/>
-            <input type="text" id="contact" name="contact" placeholder="Enter Contact" required/>
-            <input type="text" id="bookTitle" name="bookTitle" placeholder="Enter Book Title" required/>
-            <button type="button" onclick="returnBookForm(event)">Return Book</button>
-        </form>
-        <p id="responseMessage"></p>
+        <section>
+            <h2>Return Book</h2>
+            <form id="returnBookForm">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter the Email" required/>
+                <label for="contact">Contact</label>
+                <input type="text" id="contact" name="contact" placeholder="Enter Contact" required/>
+                <label for="bookTitle">Book Title</label>
+                <input type="text" id="bookTitle" name="bookTitle" placeholder="Enter Book Title" required/>
+                <button type="button" onclick="returnBookForm(event)">Return Book</button>
+            </form>
+            <p id="responseMessage"></p>
+        </section>
     </main>
     <script>
         const message = document.getElementById("responseMessage");

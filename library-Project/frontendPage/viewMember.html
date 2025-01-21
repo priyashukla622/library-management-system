@@ -66,6 +66,16 @@
         button:hover {
             background-color: #45a049;
         }
+        section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: white;
+        }
+        label{
+            font-weight: bold;
+        }
         h2{
             text-align: center;
         }
@@ -79,11 +89,14 @@
 </head>
 <body>
     <h1>Search Member by Email</h1>
-    <form id="search-form">
-        <input type="text" id="email-input" placeholder="Enter member email" required />
-        <button type="submit" onclick="searchMember(event)">View Book</button>
-    </form>
-    <h2>Member Details</h2>
+    <section>
+        <h2>View Member</h2>
+        <form id="search-form">
+            <label for="emain-input">Email</label>
+            <input type="text" id="email-input" placeholder="Enter member email" required />
+            <button type="submit" onclick="searchMember(event)">View Book</button>
+        </form>
+    </section>
     <ul id="member-details"></ul>
     <script>
         async function searchMember(e) {

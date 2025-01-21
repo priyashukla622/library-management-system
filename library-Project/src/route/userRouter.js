@@ -37,8 +37,8 @@ router.delete("/deleteUser",deleteUser)
 
 
 // // ###### Book data 
-// // router.post("/addBook",authToken,addBooks)
-router.post("/addBook",addBooks)
+router.post("/addBook",authToken,addBooks)
+// router.post("/addBook",addBooks)
 router.put("/updateBook",bookUpdated)
 router.get("/viewBook",viewBooks)
 // // router.delete("/deleteBooks/:id",deleteBooks)

@@ -51,7 +51,7 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 20px;
+    padding: 30px 20px; 
     width: 100%;
     position: relative;
     z-index: 5; 
@@ -63,7 +63,7 @@ nav a:hover {
     color: white;
     text-decoration: none;
     margin: 0 10px;
-    padding: 10px 20px;
+    padding: 5px 5px; 
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
@@ -71,6 +71,10 @@ nav a:hover {
 .header a:hover {
     /* background-color: #555; */
     color: white;
+}
+.header a:active {
+    color: #ff5733; /* You can change this to any color */
+    text-decoration: underline;
 }
 
 #divs {
@@ -222,8 +226,16 @@ footer{
     color:white;     
     margin-right: 10px;
 }
-
-
+.pages a i {
+    font-size: 15px; 
+    color: white;  
+    margin-left: 4px; 
+    transform: rotate(-90deg);
+}
+.pages a{
+    color: white;  
+    text-decoration: none;
+}
 
 ul{
     margin-top: 50px;
@@ -248,7 +260,6 @@ ul a{
     height:80px;
     font-size: 0.9rem;
     text-align: center;
-    
 }
 .pages{
     padding:20px ;

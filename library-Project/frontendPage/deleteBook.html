@@ -11,6 +11,7 @@
     }
     h2{
         text-align: center;
+        text-decoration: underline;
     }
     button{
         background-color:#4CAF50;
@@ -22,6 +23,13 @@
     button:hover{
         background-color:#4CAF50;
         color:white;
+    }
+    section {
+        margin: 20px 0;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: white;
     }
     form{
         max-width: 500px;
@@ -46,6 +54,9 @@
         transition: background-color 0.3s ease;
         margin-top: 10px;
     }
+    label{
+        font-weight: bold;
+    }
     #responseMessage {
         margin-top: 20px;
         font-size: 23px;
@@ -57,13 +68,17 @@
 <body>
     <h1>Book Delete  by Title</h1>
     <main>
-        <h2>Delete Book</h2>
-        <form id="deleteMemberForm">
-            <input type="email" id="email" placeholder="Email" required />
-            <input type="text" id="deleteBook" value="" name="bookTitle" placeholder="Enter the book name" required />
-            <button type="submit" onclick="deleteBookForm(event)">Delete Book</button>
-        </form>
-        <p id="responseMessage"></p>
+        <section>
+            <h2>Delete Book</h2>
+            <form id="deleteMemberForm">
+                <label for="emailmail">Email</label>
+                <input type="email" id="email" placeholder="Email" required />
+                <label for="deleteBook">Delete Book</label>
+                <input type="text" id="deleteBook" value="" name="bookTitle" placeholder="Enter the book name" required />
+                <button type="submit" onclick="deleteBookForm(event)">Delete Book</button>
+            </form>
+            <p id="responseMessage"></p>
+        </section>
     </main>
     <script>
         const message=document.getElementById("responseMessage");

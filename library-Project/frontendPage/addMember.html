@@ -34,22 +34,19 @@
     }
     form {
         max-width: 500px;
-        margin: 50px auto;
-        padding: 20px;
+        margin:  auto;
+        padding: 10px;
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     
-    /* Form labels */
     form label {
         display: block;
-        margin: 10px 0 5px;
         font-weight: bold;
         font-size: 16px;
     }
     
-    /* Form input fields */
     form input {
         width: 100%;
         padding: 10px;
@@ -59,9 +56,7 @@
         box-sizing: border-box;
         font-size: 14px;
     }
-    
-    /* Form button styling */
-    form button {
+        form button {
         width: 100%;
         padding: 10px;
         background-color: #4CAF50;
@@ -73,12 +68,10 @@
         transition: background-color 0.3s ease;
     }
     
-    /* Button hover effect */
     form button:hover {
         background-color: #45a049;
     }
     
-    /* Response message styling */
     #responseMessage {
         margin-top: 20px;
         font-size: 16px;
@@ -95,9 +88,13 @@
         <section id="addMember">
             <h2>Add Member</h2>
             <form id="memberForm">
+                <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter Username" required />
+                <label for="email">Email</label>
                 <input type="email" id="email" placeholder="Email" required />
+                <label for="password">Password</label>
                 <input type="password" id="password" placeholder="Password" required />
+                <label for="contact">Contact</label>
                 <input type="text" id="contact" placeholder="Contact" required />
                 <button type="submit">Add Member</button>
             </form>

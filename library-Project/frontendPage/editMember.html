@@ -20,6 +20,9 @@
         border-radius: 5px;
         background: white;
     }
+    label{
+        font-weight: bold;
+    }
     
     button {
         background-color: #4CAF50;
@@ -34,7 +37,7 @@
     }
     form {
         max-width: 500px;
-        margin: 50px auto;
+        margin: auto;
         padding: 20px;
         background-color: #fff;
         border-radius: 8px;
@@ -91,20 +94,19 @@
     <header>
         <h1>Update Member Details</h1>
     </header>
-
-    <main>
         <section id="updateMember">
             <h2>Update Member</h2>
             <form id="updateForm">
+                <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Enter Email" required />
+                <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="Enter Username" required />
+                <label for="contact">Contact Number</label>
                 <input type="text" id="contact" name="contact" placeholder="Enter Contact" required />
                 <button type="submit">Update Member</button>
             </form>
             <p id="responseMessage"></p>
         </section>
-    </main>
-
     <script>
         document.getElementById("updateForm").addEventListener("submit", async function(e) {
             e.preventDefault();
