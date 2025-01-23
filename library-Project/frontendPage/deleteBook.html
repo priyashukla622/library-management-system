@@ -86,17 +86,26 @@
             e.preventDefault();
             let email = document.getElementById("email").value;
             let bookTitle = document.getElementById("deleteBook").value;
-        
+            const token = localStorage.getItem('authToken');
+            console.log("Token from localStorage:", token); 
+
+            if (!token) {const token = localStorage.getItem('authToken');
+            console.log("Token from localStorage:", token); 
+
+                message.textContent = "No token provided. Please log in first.";
+                return;
+            }
             try {
                 const response = await fetch("http://localhost:3000/users/deleteBook", {
                     method: "DELETE",
                     headers: {
                         "Content-Type": "application/json",
-                        "Accept": "application/json"
+                        "Accept": "application/json",
+                        "Authorization": `Bearer ${token}` 
                     },
                     body: JSON.stringify({ email: email, title: bookTitle }) 
                 });
-                const result = await response.json();  // This line expects a JSON response
+                const result = await response.json();  
                 if (response.ok) {
                     message.textContent = result.message;
                     console.log(result.message);

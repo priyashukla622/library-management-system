@@ -51,8 +51,6 @@
         font-weight: bold;
         font-size: 16px;
     }
-    
-    /* Form input fields */
     form input {
         width: 100%;
         padding: 10px;
@@ -62,8 +60,6 @@
         box-sizing: border-box;
         font-size: 14px;
     }
-    
-    /* Form button styling */
     form button {
         width: 100%;
         padding: 10px;
@@ -75,13 +71,9 @@
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
-    
-    /* Button hover effect */
     form button:hover {
         background-color: #45a049;
     }
-    
-    /* Response message styling */
     #responseMessage {
         margin-top: 20px;
         font-size: 22px;
@@ -110,28 +102,20 @@
     <script>
         document.getElementById("updateForm").addEventListener("submit", async function(e) {
             e.preventDefault();
-
-            // Collecting data from the form
             const data = {
                 email: document.getElementById("email").value,
                 username: document.getElementById("username").value,
                 contact: document.getElementById("contact").value
             };
-
             try {
-                // Sending data to the backend using fetch
                 const response = await fetch("http://localhost:3000/users/updateUser", {
-                    method: "PUT",  // Using PUT method for update
+                    method: "PUT",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify(data)
                 });
-
-                // Parsing the JSON response
                 const result = await response.json();
-
-                // Displaying success or error message
                 if (response.ok) {
                     document.getElementById("responseMessage").textContent = result.message;
                 } else {

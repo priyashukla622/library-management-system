@@ -10,7 +10,6 @@ body, html {
     height: 100%; 
     margin-left:3px;
     margin-right:3px;
-    /* overflow-x: hidden;  */
 }
 
 .navbar {
@@ -45,7 +44,6 @@ nav a:hover {
 }
 
 .header {
-    /* background-color: pink;  */
     background-image: url("https://www.datocms-assets.com/29926/1602789304-footer-bg.png?h=472&w=1440");
     color: black;
     display: flex;
@@ -57,8 +55,6 @@ nav a:hover {
     z-index: 5; 
     border-bottom:2px solid #fff ;
 }
-
-/* Links in header */
 .header a {
     color: white;
     text-decoration: none;
@@ -69,11 +65,10 @@ nav a:hover {
 }
 
 .header a:hover {
-    /* background-color: #555; */
     color: white;
 }
 .header a:active {
-    color: #ff5733; /* You can change this to any color */
+    color: #ff5733; 
     text-decoration: underline;
 }
 
@@ -96,96 +91,6 @@ nav a:hover {
     font-size: 50px;
     text-align: center;
 }
-
-
-/* footer { 
-    background-image: url("https://www.datocms-assets.com/29926/1602789304-footer-bg.png?h=472&w=1440");
-    color: white;
-    padding: 20px 0;
-    font-family: Arial, sans-serif;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-info, .footer-links, .footer-social {
-    flex: 1; 
-}
-
-.footer-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.footer-social a {
-color: white;
-text-decoration: none;
-margin: 5px 0;
-}
-
-.footer-links {
-    text-align: center;
-}
-
-.footer-links ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin: 5px 0;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-.footer-social {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.footer-social a {
-    color: white;
-    text-decoration: none;
-    margin: 5px 0;
-}
-
-.footer-social a:hover {
-    text-decoration: underline;
-}
-
-.footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-} */
-
-
-/* @media screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .header {
-        flex-direction: column;
-        align-items: center;
-    }
-} */
-
-
 
 footer{
     margin-top:1px ;
@@ -265,5 +170,123 @@ ul a{
     padding:20px ;
 
 }
+@media screen and (max-width: 768px) {
+    /* Navbar adjustments */
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar img {
+        width: 80%;
+        max-width: 120px;
+    }
+    nav a {
+        margin: 10px 0;
+        padding: 8px 15px;
+        font-size: 18px;
+    }
 
+    /* Header adjustments */
+    .header {
+        flex-direction: column;
+        padding: 20px 10px;
+        text-align: center;
+    }
+    .header a {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    /* Divs background image adjustments */
+    #divs {
+        height: 60vh;
+    }
+    #divs h1 {
+        font-size: 35px;
+    }
+
+    /* Footer adjustments */
+    .foot-panel {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .foot-panel2 {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .links a, .head a {
+        font-size: 0.85rem;
+        margin-top: 8px;
+    }
+
+    .pages {
+        padding: 10px 0;
+        text-align: center;
+    }
+}
+
+/* Styles for very small screens (phones in portrait mode) */
+@media screen and (max-width: 480px) {
+    body, html {
+        font-size: 14px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 15px 5px;
+    }
+    nav a {
+        font-size: 16px;
+        margin: 5px 0;
+        padding: 8px;
+    }
+
+    /* Header */
+    .header {
+        padding: 15px 5px;
+        font-size: 14px;
+    }
+    .header a {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    /* Div background image */
+    #divs {
+        height: 50vh;
+    }
+
+    #divs h1 {
+        font-size: 30px;
+    }
+
+    /* Footer */
+    .foot-panel2, .foot-panel3 {
+        padding: 15px;
+        text-align: center;
+    }
+    .foot-panel2 {
+        flex-direction: column;
+    }
+
+    .foot-panel3 {
+        padding: 10px;
+    }
+    
+    .pages {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .head, .links, ul {
+        font-size: 0.75rem;
+        margin-top: 10px;
+    }
+}
 

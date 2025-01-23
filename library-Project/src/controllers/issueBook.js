@@ -18,15 +18,11 @@ const issueBooks = async (req, res) => {
         if (!data.email) {
             return res.json({ message: "Please provide an email" });
         }
-
-        // Check if the member with the provided email exists
         const exitMember = await signupModel.findOne({ email: data.email} );
 
         if (!exitMember) {
             return res.json({ message: "User does not exist" });
         }
-
-        // Check if the book with the provided author name exists
         console.log(data.authorName,"this is author name")
 
         const bookAuthorName = await bookModel.findOne({ authorName: data.authorName });
@@ -34,15 +30,10 @@ const issueBooks = async (req, res) => {
         if (!bookAuthorName) {
             return res.json({ message: "This author name book is not present" });
         }
-
-        // Find the book by title
         const book = await bookModel.findOne({ title: data.title });
-
         if (!book) {
             return res.json({ message: "Book with this title not found" });
         }
-
-        // If all checks pass, proceed to issue the book
         const issueBookData = new issueReturn({
             authorName: data.authorName,
             email: data.email,
@@ -53,7 +44,6 @@ const issueBooks = async (req, res) => {
             publish: data.publish
         });
         await issueBookData.save();
-
         res.json({ message: "Book is available and issued successfully" });
 
     } catch (error) {

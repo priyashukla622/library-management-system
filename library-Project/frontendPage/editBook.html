@@ -72,6 +72,8 @@
         <section id="updateBook">
             <h2>Update Book</h2>
             <form id="memberForm">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email" required />
                 <label for="editTitle">Book Title</label>
                 <input type="text" id="editTitle" name="bookTitle" placeholder="Enter the book title" required />
                 <label for="editAuthor">Book Author</label>
@@ -88,7 +90,17 @@
         const message = document.getElementById("responseMessage");
         async function updateBookForm(e) {
             e.preventDefault();
+            const token = localStorage.getItem('authToken');
+            console.log("Token from localStorage:", token); 
+
+            if (!token) {const token = localStorage.getItem('authToken');
+            console.log("Token from localStorage:", token); 
+
+                message.textContent = "No token provided. Please log in first.";
+                return;
+            }
             const data = {
+                email:document.getElementById("email").value,
                 title: document.getElementById("editTitle").value,
                 authorName: document.getElementById("editAuthor").value,
                 publish: document.getElementById("editPublish").value,
@@ -96,9 +108,10 @@
             };
             try {
                 const response = await fetch("http://localhost:3000/users/updateBook", {
-                    method: "PUT",  // Change this to "PUT" if you're updating a book
+                    method: "PUT",  
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
                     },
                     body: JSON.stringify(data)
                 });

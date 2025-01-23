@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const issueReturnSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -34,6 +33,5 @@ const issueReturnSchema = new mongoose.Schema({
         required: true,
     },
 });
-
 const issueReturn = mongoose.model("Book issueReturn", issueReturnSchema);
 module.exports = issueReturn;

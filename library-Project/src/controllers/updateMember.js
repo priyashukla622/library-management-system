@@ -1,8 +1,6 @@
 const memberModel = require('../models/memberScheema');
-
 const updateUser = async (req, res) => {
     const { email, username, contact } = req.body;
-
     try {
         const userEmail = await memberModel.findOne({ email });
         if (userEmail) {

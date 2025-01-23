@@ -1,9 +1,6 @@
-
 const memberModel = require("../models/memberScheema");
-
 const viewUser = async (req, res) => {
     const { email } = req.query;
-
     try {
         if (email) {
             const member = await memberModel.findOne({ email });
@@ -12,7 +9,6 @@ const viewUser = async (req, res) => {
             }
             return res.status(200).json(member);
         } else {
-            // Fetch all members if no email is provided
             const userList = await memberModel.find();
             res.status(200).json(userList);
             console.log("User list viewed successfully");
@@ -22,5 +18,4 @@ const viewUser = async (req, res) => {
         console.log("Unable to get user list");
     }
 };
-
 module.exports = { viewUser };

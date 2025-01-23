@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const userSignup = new mongoose.Schema({
     username:{ 
         type: String, 
