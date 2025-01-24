@@ -27,22 +27,6 @@ img {
     max-width: 100px;
     height: auto;
 }
-
-nav a {
-    color: black;
-    text-decoration: none;
-    margin: 0 10px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 20px;
-}
-
-nav a:hover {
-    background-color: #555;
-    color: white;
-}
-
 .header {
     background-image: url("https://www.datocms-assets.com/29926/1602789304-footer-bg.png?h=472&w=1440");
     color: black;
@@ -72,25 +56,39 @@ nav a:hover {
     text-decoration: underline;
 }
 
-#divs {
-    background-image: url("https://images.pexels.com/photos/2393789/pexels-photo-2393789.jpeg?auto=compress&cs=tinysrgb&w=600");  
+#divs{   
+    /* background-image: url("https://images.pexels.com/photos/2393789/pexels-photo-2393789.jpeg?auto=compress&cs=tinysrgb&w=600");       */
+    background-image: url('https://www.aidniinfotech.com/images/AC-Banners.jpg');   
     background-size: cover; 
     object-fit: cover;
     object-position: center;
     height:85vh; 
-    width: 100%;
+    width:auto;
     display: flex;
     justify-content: center; 
     align-items: center;
     position: relative; 
-}
+} 
+
+/* #divs img{ 
+    height:880vh;
+    width:100px;
+} */
 
 
-#divs h1 {
-    color: white;
-    font-size: 50px;
-    text-align: center;
-}
+/* #divs {
+        width: 100%;
+        height: 85vh;
+        overflow: hidden;
+  }
+
+  #divs img {
+    max-width: 100%; 
+    height:87vh; 
+    object-fit: cover; 
+    display: block; 
+} */
+
 
 footer{
     margin-top:1px ;
@@ -170,8 +168,56 @@ ul a{
     padding:20px ;
 
 }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu-bar {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .menu-links {
+    display: flex;
+    gap: 10px;
+  }
+.menu-links a{
+        color: black;
+        text-decoration: none;
+        margin: 0 10px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        font-size: 20px;
+}
+    
+.menu-links a:hover {
+    background-color: #555;
+    color: white;
+}
+
+
+  
+  /* Mobile Responsive */
+@media (max-width: 768px) {
+    .menu-bar {
+      display: block; 
+    }
+  
+    .menu-links {
+      display: none; 
+    }
+  
+    .menu-links.active {
+      display: flex; 
+      flex-direction: column;
+    }
+  }
+
 @media screen and (max-width: 768px) {
-    /* Navbar adjustments */
     .navbar {
         flex-direction: column;
         text-align: center;
@@ -180,12 +226,6 @@ ul a{
         width: 80%;
         max-width: 120px;
     }
-    nav a {
-        margin: 10px 0;
-        padding: 8px 15px;
-        font-size: 18px;
-    }
-
     /* Header adjustments */
     .header {
         flex-direction: column;

@@ -15,7 +15,6 @@ const deleteBooks = async (req, res) => {
         if (!existingBook) {
             return res.status(404).json({ message: "Book does not exist" });
         }
-
         const deletedBook = await bookModel.findOneAndDelete({ title });
         if (!deletedBook) {
             return res.status(400).json({ message: "Failed to delete the book" });

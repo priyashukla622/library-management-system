@@ -12,11 +12,14 @@
     <div class="navbar" id="home">
         <a href="#home"><img src="images.jpg" alt="Library Image"></a>
         <h1>Library Management System</h1>
-        <nav>
-            <a href="./signup.html">Signup</a>
-            <a href="./login.html">Login</a>
-            <a href="./logOut.html">Log out</a>
-        </nav>
+        <div class="navbar">
+            <div class="menu-bar" onclick="toggleMenu()">☰</div>
+            <div class="menu-links" id="menuLinks">
+              <a href="signup.html">Signup</a>
+              <a href="login.html">Login</a>
+              <a href="logout.html">Logout</a>
+            </div>
+        </div>
     </div>
     <div class="header">
         <a href="./addMember.html">Add Member</a>
@@ -31,7 +34,7 @@
         <a href="./returnBook.html">Return Book</a> 
     </div>
     <div id="divs">
-        <h1>WelCome to our library</h1>
+         <!-- <img src="imglibrary.png.jpg"/> -->
     </div>
     <footer>
         <div class="foot-panel">
