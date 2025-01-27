@@ -57,45 +57,22 @@ img {
 }
 
 #divs{   
-    /* background-image: url("https://images.pexels.com/photos/2393789/pexels-photo-2393789.jpeg?auto=compress&cs=tinysrgb&w=600");       */
-    background-image: url('https://www.aidniinfotech.com/images/AC-Banners.jpg');   
+    background-image: url("https://img.freepik.com/premium-photo/library-with-large-book-shelf-full-books_1316263-127103.jpg");      
     background-size: cover; 
     object-fit: cover;
     object-position: center;
-    height:85vh; 
-    width:auto;
+    height:90vh; 
+    width:100vw;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
     position: relative; 
-} 
-
-/* #divs img{ 
-    height:880vh;
-    width:100px;
-} */
-
-
-/* #divs {
-        width: 100%;
-        height: 85vh;
-        overflow: hidden;
-  }
-
-  #divs img {
-    max-width: 100%; 
-    height:87vh; 
-    object-fit: cover; 
-    display: block; 
-} */
-
-
+}  
 footer{
     margin-top:1px ;
 }
 .foot-panel{
     background-color: #37475a;  
-    /* background-image: url("https://www.datocms-assets.com/29926/1602789304-footer-bg.png?h=472&w=1440");  */
     color:white;
     height: 50px;
     display:flex;
@@ -107,7 +84,6 @@ footer{
 }
 .foot-panel2{
     background-color:#222f3d;  
-    /* background-image: url("https://www.datocms-assets.com/29926/1602789304-footer-bg.png?h=472&w=1440");   */
     color: white;
     height:300px;
     display:flex;
